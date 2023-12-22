@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    outline: 0px solid red;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+
+}
+
+
+/*font*/
+@import "font";
+
+/*color*/
+
+$color-green:rgba(0, 197, 138, 1);
+$color-cyan: rgba(0, 128, 145, 1);
+$color-black: rgba(0, 0, 0, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-phiol:rgba(100, 63, 255, 1);
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 30px;
+    color: $color-white;
+    background-color: $color-phiol;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #643FFF;
+    }
+}
+
+.header {
+    width: 100%;
+    margin-top: 20px;
+
+    &-logo {}
+
+    &-navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+
+        nav {
+
+
+            ul {
+                display: flex;
+                gap: 20px;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        text-decoration: none;
+                        color: $color-black;
+
+                        &:hover {
+                            color: rgba(109, 74, 255, 1);
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &_phone {
+            color: $color-black;
+            @include font_bold-20;
+            justify-content: center;
+        }
+
+        &_btn {}
+    }
+}
+
+.container {
+    display: flex;
+    max-width: 1140px;
+    width: 80%;
+    margin: 0 auto;
+}
