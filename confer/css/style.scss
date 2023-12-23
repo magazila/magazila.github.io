@@ -214,6 +214,7 @@ $color-phiol:rgba(100, 63, 255, 1);
 
 .container-images {
     position: relative;
+
     &_img {
         width: 100%;
         height: 150px;
@@ -241,9 +242,60 @@ $color-phiol:rgba(100, 63, 255, 1);
         color: $color-white;
         @include font_bold-64;
     }
-    &_title{
+
+    &_title {
         margin-top: 20px;
         color: $color-white;
         @include font_bold-14;
+    }
+}
+
+.photogallery {
+
+    .container {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &-title {
+        margin-top: 60px;
+        color: $color-black;
+        @include font_bold-48;
+        text-align: center;
+    }
+
+    &-subtitle {
+        margin-top: 10px;
+        color: $color-black;
+        @include font_regular-16;
+        text-align: center;
+
+        a {
+            color: rgba(0, 128, 145, 1);
+            text-decoration: none;
+
+            &:hover {
+                color: $color-phiol;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-gallerycontainer {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    img {
+        width: calc(100% / 5);
+        filter: grayscale(100%);
+        transition: all 0.5s ease;
+
+        &:hover {
+            filter: grayscale(0%);
+            transition: all 0.5s ease;
+        }
     }
 }

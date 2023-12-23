@@ -197,4 +197,46 @@ body {
   color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 14px;
+}
+
+.photogallery .container {
+  align-items: center;
+  flex-direction: column;
+}
+.photogallery-title {
+  margin-top: 60px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
+}
+.photogallery-subtitle {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+.photogallery-subtitle a {
+  color: rgb(0, 128, 145);
+  text-decoration: none;
+}
+.photogallery-subtitle a:hover {
+  color: rgb(100, 63, 255);
+  text-decoration: underline;
+}
+.photogallery-gallerycontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 50px;
+}
+.photogallery img {
+  width: 20%;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+.photogallery img:hover {
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
 }/*# sourceMappingURL=style.css.map */
