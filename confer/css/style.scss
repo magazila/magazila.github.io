@@ -30,6 +30,8 @@ $color-phiol:rgba(100, 63, 255, 1);
 }
 
 .btn {
+    @include font_bold-20;
+    font-size: 16px;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -99,4 +101,149 @@ $color-phiol:rgba(100, 63, 255, 1);
     max-width: 1140px;
     width: 80%;
     margin: 0 auto;
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    padding-bottom: 120px;
+
+    .container {
+        flex-direction: column;
+    }
+
+
+    &-overlay {
+        position: absolute;
+        background-color: $color-black;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        z-index: 2;
+    }
+
+    &-title {
+        margin-top: 75px;
+        display: flex;
+        gap: 20px;
+        z-index: 5;
+        align-items: center;
+
+        &_big {
+            color: $color-white;
+            @include font_bold-128;
+            line-height: 120.187%;
+            /* 153.84px */
+        }
+
+        &_litle {
+            color: $color-white;
+            @include font_bold-48;
+
+        }
+    }
+
+    &-subtitle {
+        margin-top: 20px;
+        z-index: 5;
+        color: $color-white;
+        @include font_regular-24
+    }
+
+    &-poster {
+
+        z-index: 5;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 100px;
+
+        &_openvideo {
+            display: inline-flex;
+            align-items: center;
+            @include font_light-14;
+            gap: 20px;
+            color: $color-white;
+
+            &:hover {
+                svg {
+                    fill: #5E42D3;
+                    transition: fill 1s ease;
+                }
+            }
+
+        }
+
+        &_date {
+            margin-top: 60px;
+            color: $color-white;
+            @include font_bold-48;
+        }
+
+        &_plase {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            color: $color-white;
+            @include font_regular-14;
+        }
+
+        &_coloum {
+
+            &-l {}
+
+            &-r {
+                width: 50%;
+                display: flex;
+                gap: 15px;
+                justify-content: space-between;
+            }
+
+        }
+
+        &_container-images {
+            width: calc(100% / 3);
+        }
+    }
+}
+
+.container-images {
+    position: relative;
+    &_img {
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            transform: translateY(-40px);
+            filter: grayscale(100%);
+            transition: filter 0.5s ease-in-out;
+
+            &:hover {
+                filter: grayscale(0%);
+                transition: filter 0.5s ease-in-out;
+            }
+        }
+
+
+    }
+
+    &_number {
+        position: absolute;
+        right: 0;
+        bottom: 40px;
+        color: $color-white;
+        @include font_bold-64;
+    }
+    &_title{
+        margin-top: 20px;
+        color: $color-white;
+        @include font_bold-14;
+    }
 }
