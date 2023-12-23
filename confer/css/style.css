@@ -9,6 +9,7 @@
 body {
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
+  background: #FDFDFD;
 }
 
 /*font*/
@@ -239,4 +240,68 @@ body {
 .photogallery img:hover {
   filter: grayscale(0%);
   transition: all 0.5s ease;
+}
+
+.format .container {
+  flex-direction: column;
+  align-items: center;
+}
+.format-title {
+  margin-top: 95px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 48px;
+}
+.format-variant {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+}
+.format-variant_r, .format-variant_l {
+  width: calc(50% - 10px);
+}
+.format-variant_img img {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+.format-variant_day {
+  margin-top: 16px;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 16px;
+}
+.format-variant_title {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.format-variant_subtitle {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 14px;
+}
+.format-advantages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 100px;
+}
+.format-advantages_box {
+  width: 28.5714285714%;
+  display: inline-flex;
+}
+.format-advantages_box-r {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.format-advantages_title {
+  font-weight: bold;
+  font-size: 14px;
+}
+.format-advantages_subtitle {
+  font-weight: 400;
+  font-size: 12px;
 }/*# sourceMappingURL=style.css.map */
