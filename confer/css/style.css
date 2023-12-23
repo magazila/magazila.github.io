@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 * {
   box-sizing: border-box;
-  outline: 0px solid red;
+  outline: 0px solid gray;
   margin: 0;
   padding: 0;
 }
@@ -305,4 +305,65 @@ body {
 .format-advantages_subtitle {
   font-weight: 400;
   font-size: 12px;
+}
+
+.sponsor {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(175, 175, 175, 0.09) 50.4%, rgba(255, 255, 255, 0.04) 100%), linear-gradient(78deg, #008091 -0.65%, #00C58A 100%);
+  margin-top: 65px;
+}
+.sponsor .container {
+  flex-direction: column;
+  align-items: center;
+}
+.sponsor-title {
+  font-weight: bold;
+  font-size: 48px;
+}
+.sponsor-subtitle {
+  width: 500px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.sponsor-people {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  justify-content: space-between;
+}
+.sponsor-people_bio {
+  width: 31.25%;
+}
+.sponsor-people_bio a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.sponsor-people_bio a:hover {
+  text-decoration: underline;
+}
+.sponsor-people_bio img {
+  width: 100%;
+}
+.sponsor-people_bio-name {
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 16px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.sponsor-people_bio-work {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 10px;
+  width: 80%;
+}
+.sponsor-people_bio-post {
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 30px;
 }/*# sourceMappingURL=style.css.map */
