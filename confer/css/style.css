@@ -330,7 +330,7 @@ section .container {
 .ticket-card_icon {
   width: 150px;
   height: 110px;
-  background-image: url(/img/icon_ticket.png);
+  background-image: url(https://i.postimg.cc/Y9kwgDzf/icon-ticket.png);
   background-size: cover;
   position: absolute;
   transform: translateY(-50px);
@@ -433,7 +433,7 @@ section .container {
 footer {
   position: relative;
   width: 100%;
-  background-image: url(/img/footer.jpg);
+  background-image: url(https://i.postimg.cc/s25rMC7g/footer.jpg);
   background-position: center;
   background-size: cover;
   padding: 100px 0;
