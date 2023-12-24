@@ -1,0 +1,65 @@
+.ticket {
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+        margin-top: 100px;
+    }
+
+    &-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 4px;
+        background: #FFF;
+        gap: 20px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
+
+        &_icon {
+            width: 150px;
+            height: 110px;
+            background-image: url(/img/icon_ticket.png);
+            background-size: cover;
+            position: absolute;
+            transform: translateY(-50px);
+        }
+
+        &_plase {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 131.687%;
+        }
+
+        &_day {
+            padding: 0 20px;
+        }
+
+        &_day,
+        &_line {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 131.687%;
+            text-align: center;
+        }
+
+        &_prise {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 131.687%;
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            bottom: 0;
+            padding: 20px;
+        }
+
+    }
+}

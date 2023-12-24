@@ -1,0 +1,11 @@
+.photogallery {
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        img {
+            width: calc(100% / 5);
+        }
+    }
+}
