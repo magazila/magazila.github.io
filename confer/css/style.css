@@ -520,6 +520,11 @@ section .container {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
 }
+.footer-r_photo-litle {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 5px;
+}
 .footer-r img {
   width: 100%;
 }
