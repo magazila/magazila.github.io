@@ -183,9 +183,6 @@
     }
 
     .footer {
-
-
-
         &-l {
             text-align: center;
 
@@ -194,18 +191,15 @@
                 font-weight: 700;
                 line-height: 131.687%;
             }
-
             &_2 {
                 font-size: 60px;
             }
-
             &_3 {
                 font-size: 24px;
                 font-weight: 400;
                 line-height: 131.687%;
                 margin-top: 15px;
             }
-
             &_5 {
                 display: flex;
                 width: 100%;
@@ -215,7 +209,6 @@
                 gap: 15px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid white;
-
                 div {
                     font-size: 30px;
                     display: flex;
@@ -223,7 +216,6 @@
                     gap: 10px;
                 }
             }
-
             &_6 {
                 width: 100%;
                 display: flex;
@@ -239,13 +231,11 @@
             display: none;
         }
     }
+
+    footer {
+        .container {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 
-footer {
-    .container {
-        grid-template-columns: 1fr;
-    }
-    svg{
-        display: none;
-    }
-}

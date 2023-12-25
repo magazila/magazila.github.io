@@ -65,13 +65,7 @@ section {
     }
 }
 
-@import "hero";
-@import "photogallery";
-@import "programs";
-@import "sponsor";
-@import "ticket";
-@import "description";
-@import "footer";
+
 
 
 .white {
@@ -81,10 +75,17 @@ section {
 
 
 
+@import "hero";
+@import "photogallery";
+@import "programs";
+@import "sponsor";
+@import "ticket";
+@import "description";
+@import "footer";
+
+
 @import "table";
-
 @import "mobile";
-
 
 
 

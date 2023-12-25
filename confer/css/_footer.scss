@@ -1,20 +1,4 @@
-footer {
-    position: relative;
-    width: 100%;
-    background-image: url(https://i.postimg.cc/s25rMC7g/footer.jpg);
-    background-position: center;
-    background-size: cover;
-    padding: 100px 0;
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 20px;
-    }
-
-
-
-}
 
 .footer {
     &-overlay {
@@ -129,5 +113,23 @@ margin-top: 10px;
         }
 
     }
+
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-image: url(https://i.postimg.cc/s25rMC7g/footer.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+
+
 
 }

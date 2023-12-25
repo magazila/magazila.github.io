@@ -45,6 +45,10 @@ section .container {
   margin: 0 auto;
 }
 
+.white {
+  color: rgb(255, 255, 255);
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -430,20 +434,6 @@ section .container {
   justify-content: center;
 }
 
-footer {
-  position: relative;
-  width: 100%;
-  background-image: url(https://i.postimg.cc/s25rMC7g/footer.jpg);
-  background-position: center;
-  background-size: cover;
-  padding: 100px 0;
-}
-footer .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 20px;
-}
-
 .footer-overlay {
   position: absolute;
   width: 100%;
@@ -534,8 +524,18 @@ footer .container {
   margin-top: 10px;
 }
 
-.white {
-  color: rgb(255, 255, 255);
+footer {
+  position: relative;
+  width: 100%;
+  background-image: url(https://i.postimg.cc/s25rMC7g/footer.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -706,14 +706,10 @@ footer .container {
   .footer-r {
     display: none;
   }
+  footer .container {
+    grid-template-columns: 1fr;
+  }
 }
-footer .container {
-  grid-template-columns: 1fr;
-}
-footer svg {
-  display: none;
-}
-
 @media (max-width: 576px) {
   section {
     color: #000;
@@ -832,10 +828,10 @@ footer svg {
   .description-list_listbox-subtitle {
     font-size: 18px;
   }
-  .footer-l_2 {
+  .footer_2 {
     font-size: 28px;
   }
-  .footer-l_5 {
+  .footer_5 {
     display: flex;
     width: 250px;
     margin-top: 15px;
@@ -843,13 +839,13 @@ footer svg {
     align-items: flex-start;
     gap: 15px;
   }
-  .footer-l_5 div {
+  .footer_5 div {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 20px;
   }
-  .footer-l_6 {
+  .footer_6 {
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -858,5 +854,8 @@ footer svg {
   }
   .footer-r {
     display: none;
+  }
+  footer .container {
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=style.css.map */
