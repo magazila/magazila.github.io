@@ -536,4 +536,327 @@ footer .container {
 
 .white {
   color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1024px) {
+  section {
+    color: #000;
+    padding: 20px 0 15px 0;
+  }
+  section .title {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+  }
+  section .subtitle {
+    width: 100%;
+    text-align: center;
+  }
+  section .container {
+    width: 100%;
+    padding: 20px;
+  }
+  .header .container {
+    display: grid;
+  }
+  .header .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 20px;
+  }
+  .header-navbar {
+    margin-top: 20px;
+  }
+  .header-navbar nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .header-contact_phone {
+    font-size: 28px;
+  }
+  .hero-title {
+    flex-wrap: wrap;
+  }
+  .hero-title_big {
+    font-size: 150px;
+  }
+  .hero-title_litle {
+    font-size: 60px;
+  }
+  .hero-poster_coloum-r {
+    display: none;
+  }
+  .photogallery-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+  .photogallery-gallery img {
+    width: 100%;
+  }
+  .programs-block {
+    margin-top: 0px;
+  }
+  .programs-collom_2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .programs-collom_2 img {
+    height: auto;
+  }
+  .programs-collom_3 {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+  }
+  .sponsor-people {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .sponsor-people_bio img {
+    margin-top: 30px;
+  }
+  .ticket-container {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+  }
+  .ticket-card {
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  .description-list {
+    margin-top: 10px;
+  }
+  .description-bottom {
+    margin-top: 50px;
+  }
+  .description-bottom .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+  }
+  .description-list {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+  }
+  .description-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+  .description-bottom .btn {
+    display: none;
+  }
+  .description-bottom div {
+    width: 100%;
+  }
+  .description-list_listbox {
+    grid-template-columns: 1fr;
+  }
+  .description-list_listbox-title {
+    font-size: 26px;
+  }
+  .description-list_listbox-subtitle {
+    font-size: 18px;
+  }
+  .footer-l {
+    text-align: center;
+  }
+  .footer-l_1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 131.687%;
+  }
+  .footer-l_2 {
+    font-size: 60px;
+  }
+  .footer-l_3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 131.687%;
+    margin-top: 15px;
+  }
+  .footer-l_5 {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+  }
+  .footer-l_5 div {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-l_6 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .footer-r {
+    display: none;
+  }
+}
+footer .container {
+  grid-template-columns: 1fr;
+}
+footer svg {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  section {
+    color: #000;
+    padding: 20px 0 15px 0;
+  }
+  section .title {
+    font-size: 40px;
+    width: 100%;
+    text-align: left;
+  }
+  section .subtitle {
+    width: 100%;
+    text-align: left;
+  }
+  section .container {
+    width: 100%;
+    padding: 20px;
+  }
+  .header .container {
+    display: grid;
+  }
+  .header .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 20px;
+  }
+  .header-navbar {
+    margin-top: 20px;
+  }
+  .header-navbar nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .header-contact_phone {
+    font-size: 28px;
+  }
+  .hero-title {
+    flex-wrap: wrap;
+  }
+  .hero-title_big {
+    font-size: 115px;
+  }
+  .hero-title_litle {
+    font-size: 40px;
+  }
+  .hero-poster_coloum-r {
+    display: none;
+  }
+  .photogallery-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .photogallery-gallery img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .programs-block {
+    margin-top: 0px;
+  }
+  .programs-collom_2 {
+    grid-template-columns: 1fr;
+  }
+  .programs-collom_2 img {
+    height: 200px;
+  }
+  .programs-collom_3 {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+  .sponsor-people {
+    grid-template-columns: 1fr;
+  }
+  .sponsor-people_bio img {
+    margin-top: 30px;
+  }
+  .ticket-container {
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+  .ticket-card {
+    margin-top: 20px;
+  }
+  .description-list {
+    margin-top: 10px;
+  }
+  .description-bottom {
+    margin-top: 50px;
+  }
+  .description-bottom .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+  }
+  .description-list {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+  .description-bottom {
+    grid-template-columns: 1fr;
+  }
+  .description-bottom div {
+    width: 100%;
+  }
+  .description-list_listbox {
+    grid-template-columns: 1fr;
+  }
+  .description-list_listbox-title {
+    font-size: 26px;
+  }
+  .description-list_listbox-subtitle {
+    font-size: 18px;
+  }
+  .footer-l_2 {
+    font-size: 28px;
+  }
+  .footer-l_5 {
+    display: flex;
+    width: 250px;
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .footer-l_5 div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+  }
+  .footer-l_6 {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+  .footer-r {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
