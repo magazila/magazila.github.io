@@ -47,7 +47,7 @@
     &-bottom {
         margin-top: 100px;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 2fr repeat(4, 1fr);
         grid-row-gap: 40px;
         justify-content: end;
         align-items: center;
@@ -76,6 +76,12 @@
                 justify-content: center;
             }
 
+        }
+        .btn {
+            height: 50px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
         }
     }
 }

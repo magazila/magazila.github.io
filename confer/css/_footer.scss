@@ -82,11 +82,12 @@
         }
 
         &_7 {
-            display: flex;
+            display: inline-flex;
             height: 50px;
             align-items: center;
             justify-content: center;
             margin-top: 20px;
+            width: 85%;
         }
     }
 
@@ -126,7 +127,7 @@ footer {
 
     .container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.5fr 1.7fr;
         grid-row-gap: 20px;
     }
 
