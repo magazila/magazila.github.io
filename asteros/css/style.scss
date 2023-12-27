@@ -33,7 +33,7 @@ body {
     padding: 40px 0;
     width: 100%;
     background-image: url(https://i.postimg.cc/YqR3B7vT/hero-section.png);
-    background-position: center bottom;
+    background-position: center -150px;
     background-size: cover;
     z-index: 1;
 
@@ -43,8 +43,8 @@ body {
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(105, 189, 238, 1);
-        opacity: 0.7;
+        background-color: rgba(0, 156, 246, 1);
+        opacity: 0.6;
         z-index: 2;
     }
 
@@ -67,6 +67,7 @@ body {
 
             &:nth-child(1) {
                 justify-content: start;
+                align-items: center;
             }
 
             &:last-child {
@@ -153,13 +154,17 @@ body {
                 border-radius: 0px 4px 4px 0px;
                 background: #00A2FF;
                 position: relative;
-                top: 50%;
+                top: 45%;
                 transform: translateY(-45%);
                 border: 0px;
             
                 .header-serveses_items-name {
                     border-left: 5px solid white;
                     padding: 0 0 0 10px;
+                }
+                .header-serveses_items-icon img{
+                    width: 128px;
+                    height: 128px;
                 }
             }
             
@@ -183,6 +188,10 @@ body {
                 text-transform: uppercase;
             }
         }
+    }
+    &-goback{
+        margin-top: 50px;
+        cursor: pointer;
     }
 
 }
