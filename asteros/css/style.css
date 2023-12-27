@@ -129,7 +129,7 @@ body {
   padding: 25px;
 }
 .header-serveses_items:last-child {
-  border-right: 0px;
+  border: 0px;
 }
 .header-serveses_items:hover {
   height: 110%;
