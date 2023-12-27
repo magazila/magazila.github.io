@@ -2,7 +2,7 @@
     font-family: 'Gotham Pro';
     src: url('GothamPro-Bold.eot');
     src: local('Gotham Pro Bold'), local('GothamPro-Bold'),
-        url('https://downloader.disk.yandex.ru/disk/5c17fa8f339f263b24657096a711038349efd743241bce3bda1121478b319908/658be335/J61prCrz7uLI2qtKmrK7ade0_wYtLaABOHeh7mEwR3BzQBoRboTx9SmsdTXP0Hd2UfN7L2ZOi942KcAUD-8B8Q%3D%3D?uid=82510129&filename=GothamPro-Bold.eot&disposition=attachment&hash=&limit=0&content_type=application%2Foctet-stream&owner_uid=82510129&fsize=41038&hid=73033ea2a9961fbb1db9f972bab451eb&media_type=font&tknv=v2&etag=7e597cec6210f34b16b2cd7c436a946b?#iefix') format('embedded-opentype'),
+        url('GothamPro-Bold.eot#iefix') format('embedded-opentype'),
         url('GothamPro-Bold.woff2') format('woff2'),
         url('GothamPro-Bold.woff') format('woff'),
         url('GothamPro-Bold.ttf') format('truetype');
