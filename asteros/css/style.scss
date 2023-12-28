@@ -327,6 +327,7 @@ body {
                         width: 100%;
                         filter: grayscale(100%);
                         transition: filter 0.2s;
+                        cursor: pointer;
 
                         &:hover {
                             filter: grayscale(0%);
@@ -339,6 +340,138 @@ body {
     }
 
 }
+
+.footer {
+    position: relative;
+    padding: 60px 0;
+    width: 100%;
+    background-image: url(https://s3-alpha-sig.figma.com/img/781d/1b52/74344b34c70b5d71ccb7e62f8e418070?Expires=1704672000&Signature=ISsHIZ2ChbfHRLitfYmFH~Al17TkkdutB7K~B71N0fzC692BovJxjycCCSkyOwzxWilSsC17w0hpAl38BmkgGtwAaXeha47XCtX-4uv5NRKoMCSe00eBwKAZbOs58puCvhEfC4XfWtxeepccqZMbOIWyqk2k6wbMSD7UuiEWhgqHR2TX4~qmrMyR9sOOOVLmjkcu4Go-v57Cy85VNXEL-zGJKa73noLe8RT6aX4bFctm7Pf1PuEpcP0kBRDsN3JW-yIWOaOfjzwteMmxL-qXHqZiy1UWYw9D24PAA0GNhMiysK6RINhHPoXvqjHPQhj8xEGst4n6GT18MFxFVQWlMg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
+    background-size: cover;
+    z-index: 1;
+
+    &-overlay {
+        position: absolute;
+        background-color: rgba(42, 50, 54, 0.9);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    &-box {
+        display: grid;
+        justify-content: space-between;
+        grid-row-gap: 60px;
+
+        div {
+            z-index: 3;
+        }
+    }
+
+    &-menu {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        &_title {
+            color: #FFF;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        &_navbar {
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                &:hover {
+                    li {
+                        color: white;
+                        transition: 0.2s;
+                    }
+                }
+
+
+                li {
+                    list-style: none;
+                    color: #A4ACB1;
+                    font-weight: 400;
+                    line-height: 200%;
+                }
+            }
+        }
+
+
+        &_box {
+            &--1 {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            &--2 {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            &--3 {
+                grid-area: 1 / 3 / 2 / 4;
+            }
+
+            &--4 {
+                grid-area: 1 / 4 / 2 / 5;
+            }
+
+            &--5 {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            &--6 {
+                grid-area: 2 / 2 / 3 / 4;
+
+                .footer-menu_navbar {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            &--7 {
+                grid-area: 2 / 4 / 3 / 5;
+            }
+
+            &--8 {
+                grid-area: 3 / 1 / 4 / 2;
+                display: flex;
+                gap: 20px;
+            }
+
+            &--9 {
+                grid-area: 3 / 2 / 4 / 4;
+            }
+
+            &--10 {
+                grid-area: 3 / 4 / 4 / 5;
+                color: #A4ACB1;
+                font-weight: 400;
+                line-height: 200%;
+                text-align: right;
+                
+            }
+        }
+    }
+}
+
+
+
 
 .box {
     &-text {
