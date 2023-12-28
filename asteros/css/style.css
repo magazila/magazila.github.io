@@ -26,9 +26,17 @@ body {
   max-width: 1200px;
   width: calc(100% - 30px);
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.container-partner {
+  max-width: 1200px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  background: white;
+  height: 250px;
+  padding: 60px 75px;
 }
 
 .header {
@@ -91,12 +99,11 @@ body {
   background: #62C5FF;
   height: 230px;
   margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .header-servises_items {
-  width: 25%;
   padding: 0 30px 0 30px;
   display: flex;
   flex-direction: column;
@@ -142,7 +149,7 @@ body {
 
 .about {
   width: 100%;
-  padding: 50px 0 150px 0;
+  padding: 50px 0 50px 0;
 }
 .about-info {
   background-color: #fff;
@@ -202,16 +209,17 @@ body {
   width: 100%;
   background: #fff;
   margin-top: 110px;
+  padding: 20px 0;
 }
 .about-miniservises_box {
   position: relative;
-  width: calc(33.3333333333% - 15px);
   background: black;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 40px;
   background-size: cover;
+  min-height: 170px;
 }
 .about-miniservises_box-overlay {
   position: absolute;
@@ -237,6 +245,37 @@ body {
   line-height: 140%;
   margin-top: 10px;
   z-index: 10;
+}
+.about-partner {
+  margin-top: 65px;
+}
+.about-partner_title {
+  color: #32373A;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.about-partner_subtitle {
+  margin-top: 10px;
+  color: #32373A;
+  font-weight: 400;
+  line-height: 140%;
+}
+.about-partner_partner-box {
+  display: flex;
+  margin-top: 40px;
+  gap: 60px;
+  justify-content: space-around;
+}
+.about-partner_partner-box_icon img {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+.about-partner_partner-box_icon img:hover {
+  filter: grayscale(0%);
+  transition: filter 0.2s;
 }
 
 .box-text_title {
