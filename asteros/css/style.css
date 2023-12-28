@@ -21,7 +21,14 @@ body {
   display: grid;
   grid-template-columns: 1.3fr 2fr;
   grid-column-gap: 50px;
-  height: 200px;
+}
+.container-miniservises {
+  max-width: 1200px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .header {
@@ -80,7 +87,6 @@ body {
   width: 500px;
 }
 .header-servises {
-  width: 63%;
   border-radius: 0px 4px 4px 0px;
   background: #62C5FF;
   height: 230px;
@@ -97,9 +103,6 @@ body {
   align-items: flex-start;
   border-right: 2px solid white;
   transition: 0.8s height;
-}
-.header-servises_items:nth-child(1) {
-  width: 30%;
 }
 .header-servises_items:nth-child(4) {
   border-right: 0px;
@@ -194,6 +197,46 @@ body {
   height: 8px;
   flex-shrink: 0;
   background: rgb(0, 123, 194);
+}
+.about-miniservises {
+  width: 100%;
+  background: #fff;
+  margin-top: 110px;
+}
+.about-miniservises_box {
+  position: relative;
+  width: calc(33.3333333333% - 15px);
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  background-size: cover;
+}
+.about-miniservises_box-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(42, 50, 54, 0.8);
+  z-index: 9;
+}
+.about-miniservises_box-title {
+  color: #FFF;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+.about-miniservises_box-subtitle {
+  color: #A4ACB1;
+  font-weight: 400;
+  line-height: 140%;
+  margin-top: 10px;
+  z-index: 10;
 }
 
 .box-text_title {
