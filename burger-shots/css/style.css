@@ -208,6 +208,10 @@ body {
   justify-content: space-between;
 }
 
+.active {
+  background: #FFAB08;
+}
+
 .shop .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -289,6 +293,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+}
+.shop-col_cat-allcard a {
+  text-decoration: none;
 }
 
 .position {

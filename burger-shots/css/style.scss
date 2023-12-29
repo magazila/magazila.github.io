@@ -23,9 +23,16 @@ body {
     padding: 0;
 }
 
+
+
 @import 'component';
 @import 'header';
 @import 'tab';
+
+
+.active{
+    background: #FFAB08;
+}
 
 .shop {
 
@@ -124,6 +131,9 @@ body {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 20px;
+                a {
+                    text-decoration: none;
+                }
             }
         }
 
