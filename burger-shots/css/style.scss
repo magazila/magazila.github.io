@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/*color*/
+
+$yellow:rgba(255, 171, 8, 1);
+$orange:rgb(255, 112, 32);
+$black:rgba(0, 0, 0, 1);
+$white:rgba(249, 249, 249, 1);
+$gray:rgba(242, 242, 243, 1);
+
+
+* {
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    background: $gray;
+    color: $black;
+    margin: 0;
+    padding: 0;
+}
+
+@import 'component';
+@import 'header';
+@import 'tab';
+
+.shop {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: 30px;
+        margin-top: 120px;
+    }
+
+    &_title {
+        color: #000;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+
+    &-cart {
+        border-radius: 18px;
+        background: $white;
+        padding: 24px 16px;
+        position: sticky;
+        top: 50px;
+
+        &_position {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        &_title {
+            display: flex;
+            font-size: 24px;
+            font-weight: 600;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 15px;
+
+            .lot {
+                border-radius: 6px;
+                background: #F2F2F3;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 400;
+                padding: 5px 20px;
+            }
+        }
+
+        &_result {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 130%;
+        }
+
+        &_btn {
+            margin-top: 24px;
+        }
+
+        &_dilivery {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &-col {
+        &_r {
+            position: relative;
+            width: 100%;
+            margin-top: -50px;
+
+        }
+
+        &_cat {
+            position: sticky;
+            margin-bottom: 50px;
+
+            &-title {
+                font-size: 40px;
+                font-weight: 600;
+                line-height: 120%;
+            }
+
+            &-allcard {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 20px;
+            }
+        }
+
+
+    }
+}
+
+.position {
+    padding: 16px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 700px;
+    overflow-y: scroll;
+
+
+    &::-webkit-scrollbar {
+        height: 2px;
+        width: 2px;
+      }
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: #EBEBEB;
+      }
+      
+    &::-webkit-scrollbar-track:hover {
+        background-color: #FF7020;
+      }
+      
+    &::-webkit-scrollbar-track:active {
+        background-color: #B8C0C2;
+      }
+      
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #FF7020;
+      }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #FF7020;
+      }
+      
+    &::-webkit-scrollbar-thumb:active {
+        background-color: #ff7020;
+      }
+
+    &-img {
+        width: 64px;
+        height: 52px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    &-dicription {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 6px;
+        justify-content: space-between;
+        width: 70%;
+
+        &_name {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        &_weight {
+            color: #B1B1B1;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        &_prise {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    &-lot {
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        background: #F2F2F3;
+        width: 90px;
+        height: 60px;
+        justify-content: space-between;
+        padding: 0 20px;
+
+
+        &_minus,
+        &_count,
+        &_plus {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        &_count {
+            font-weight: 800;
+        }
+
+        &_minus,
+        &_plus {
+            cursor: pointer;
+        }
+    }
+}

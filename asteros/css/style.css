@@ -392,4 +392,17 @@ body {
   color: #A4ACB1;
   font-weight: 400;
   line-height: 140%;
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: auto;
+  }
+  .header-servises {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .footer-menu_navbar {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

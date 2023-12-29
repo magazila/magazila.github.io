@@ -1,0 +1,149 @@
+.btn {
+    background-color: $orange;
+    color: $white;
+    width: 100%;
+    display: flex;
+    padding: 11px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 0px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+
+    &:hover {
+        background: #FFAB08;
+    }
+
+    &:active {
+        background: #F86310;
+    }
+
+    &:disabled {
+        background: #F9F9F9;
+        color: rgba(172, 172, 172, 1);
+    }
+}
+
+.card-btn {
+    background-color: $gray;
+    color: $black;
+    display: flex;
+    padding: 11px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+
+    &:hover {
+        background: $yellow;
+        color: $white;
+    }
+
+    &:active {
+        background: $orange;
+        color: $white;
+    }
+
+    &:disabled {
+        background: #F9F9F9;
+        color: rgba(172, 172, 172, 1);
+    }
+}
+
+.tab {
+    &-btn {
+        display: inline-flex;
+        padding: 8px 14px;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid $white;
+        border-radius: 50px;
+        background: $white;
+        color: $black;
+        font-size: 16px;
+        font-weight: 400;
+
+        img {
+            width: 25px;
+        }
+
+        &:hover {
+            border: 1px solid #F86310;
+        }
+
+        &:active {
+            background: $yellow;
+        }
+    }
+}
+
+.card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+    border-radius: 18px;
+    background: $white;
+
+    &-img {
+        width: 100%;
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        img{
+            width: 100%;
+        }
+    }
+
+    &-prise {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 100%;
+        margin-top: 16px;
+    }
+
+    &-name {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 130%;
+        margin-top: 8px;
+    }
+
+    &-weight {
+        color: #B1B1B1;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 130%;
+        margin-top: 30px;
+    }
+
+    &-btn {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+.container {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+.white {
+    color: $white;
+}
+
+.orange {
+    color: $orange;
+}
