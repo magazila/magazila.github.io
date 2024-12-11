@@ -1,6 +1,6 @@
 @font-face {
   font-family: "main";
-  src: url("https://github.com/magazila/cafe123/raw/refs/heads/main/Akbar_Cyrillic.ttf");
+  src: url("../font/Akbar_Cyrillic.ttf");
 }
 ::-moz-placeholder {
   color: #f5d8b0;
