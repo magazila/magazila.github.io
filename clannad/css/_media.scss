@@ -1,0 +1,137 @@
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 85vh;
+    }
+
+    .about .section__center {
+        padding-top: 0;
+    }
+
+    section.violet .section__bottom {
+        height: 50px;
+    }
+
+    section.violet .section__top {
+        height: 50px;
+    }
+
+
+    .about {
+        p {
+            display: block !important;
+            padding: 10px !important;
+        }
+    }
+
+    .chara {
+
+        &__scroll,
+        &__container {
+            width: 100%;
+        }
+
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            &-left,
+            &-rigth {
+                display: none !important;
+            }
+        }
+
+        &__card {
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+
+        &__img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+    }
+
+    section .container p {
+        display: none;
+        font-family: "Roboto Condensed", sans-serif;
+        margin: 10px 0;
+        border: 5px dashed #d1cddf;
+        border-radius: 20px;
+        padding: 0;
+        background: rgba(242, 203, 214, 0.2);
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .blockquote {
+        &__grid {
+            gap: 0px;
+        }
+
+        &__text {
+            display: block !important;
+            min-height: auto;
+            padding: 20px !important;
+        }
+    }
+
+    .gallery {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+
+    .gallery__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .chara__container-left,
+    .chara__container-rigth {
+        top: 50%;
+        ;
+    }
+
+    .chara__card {
+        width: 900px;
+        border: 0px;
+        align-items: end;
+    }
+
+    .chara__container {
+        padding: 0;
+    }
+    .chara__scroll {
+    margin: 0px auto;
+}
+
+    section.violet .section__bottom {
+        height: 50px;
+    }
+
+    .chara__text {
+        margin: 10px 20px !important;
+        line-height: normal;
+    }
+
+    section.violet .section__top {
+        height: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero {
+        padding-top: 90vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        padding-top: 90vh;
+    }
+}
