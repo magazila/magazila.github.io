@@ -232,6 +232,7 @@ section.violet {
     animation-range: 0 20%;
     animation-fill-mode: forwards;
     position: relative;
+    scroll-margin-top: 120px;
   }
 
   /* Переопределяем переменную для четных карточек */
