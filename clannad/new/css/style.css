@@ -226,16 +226,17 @@ section.violet {
     align-items: flex-start;
     margin-top: -80px;
     --trans: 150%;
-    transform: translateX(var(--trans));
+    left: var(--trans);
     animation: showCard;
     animation-timeline: view();
     animation-range: 0 20%;
     animation-fill-mode: forwards;
+    position: relative;
   }
 
   /* Переопределяем переменную для четных карточек */
   .chara__card:nth-child(even) {
-    --trans: -150%;
+    right: var(--trans);
     animation: showCard;
     animation-timeline: view();
     animation-range: 0 20%;
@@ -263,6 +264,7 @@ section.violet {
 
 
   .chara__img {
+    position: relative;
     min-width: 15%;
     z-index: 5;
     display: flex;
@@ -273,6 +275,8 @@ section.violet {
     border-radius: 15px;
     border: 5px dashed var(--bg-header);
     padding: 25px;
+    z-index: 2;
+    position: relative;
   }
 
   .chara__header {
@@ -304,6 +308,12 @@ section.violet {
     }
 
   }
+
+  @property --trans {
+  syntax: '<length-percentage>'; 
+  inherits: true;
+  initial-value: 0%;
+}
 
 
   @keyframes showBg {
@@ -340,11 +350,11 @@ section.violet {
 
   @keyframes showCard {
     0% {
-      transform: translateX(--trans);
+      --trans: 150%;
     }
 
     100% {
-      transform: translateX(0);
+      --trans: 0%;
     }
 
   }
