@@ -235,7 +235,6 @@ section.violet {
     scroll-margin-top: 120px;
   }
 
-  /* Переопределяем переменную для четных карточек */
   .chara__card:nth-child(even) {
     right: var(--trans);
     animation: showCard;
