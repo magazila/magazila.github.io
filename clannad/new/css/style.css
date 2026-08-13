@@ -95,6 +95,7 @@ section.violet {
   .hero {
     height: 100dvh;
     background-image: url(../images/hero_bg.jpg);
+    background-size: cover;
     background-position: center top;
     display: flex;
     flex-direction: column;
@@ -244,6 +245,7 @@ section.violet {
       order: 2;
       display: flex;
       justify-content: space-evenly;
+      z-index: 5;
     }
 
     .chara__header {
