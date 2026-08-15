@@ -1,8 +1,113 @@
 @layer comp {
-
-    /* ===== LANDSCAPE ===== */
     .landscape {
         display: none;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        width: 100%;
+        height: 100dvh;
+        background-image: url(../../img/foto-pettine-IfjHaIoAoqE-unsplash.jpg);
+        background-position: center bottom;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .hero {
+        .container {
+            height: 100dvh;
+            justify-content: center;
+        }
+    }
+
+    .hero__title {
+        color: var(--color-primary-500);
+        text-align: center;
+    }
+
+    .hero__subtitle {
+        color: var(--color-primary-400);
+        text-align: center;
+        margin-top: 16px;
+    }
+
+    .hero__bottom {
+        background-color: var(--color-neutral-000);
+        --height: 10vh;
+        height: var(--height);
+        width: 100%;
+        border-radius: 50% 50% 0 0;
+        position: absolute;
+        bottom: calc(0px - (var(--height) / 2));
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 999;
+        padding: 10px 40px;
+    }
+
+    .header figure {
+        margin: 0;
+    }
+
+    .header__menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: var(--color-primary-600);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: 0.5s;
+
+        ul {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-family: var(--text-headline);
+            font-size: clamp(2.25rem, 1.58rem + 2.96vw, 3.5rem);
+            line-height: clamp(2.75rem, 2.08rem + 2.96vw, 4rem);
+            letter-spacing: -0.02em;
+            text-align: center;
+
+            a {
+                color: var(--color-neutral-000);
+                padding: 10px;
+            }
+        }
+    }
+
+    .header__menu.open {
+        transform: translateX(0);
+        transition: 0.5s;
+    }
+
+    .scroll__arrow,
+    .scroll__text {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-primary-500);
+    }
+
+    .scroll__arrow {
+        font-size: var(--font-size-h3);
+        margin: clamp(1.625rem, calc(2.136rem - 0.682vw), 2rem) 0 0;
     }
 
     @media (max-width: 1024px) and (orientation: landscape) {
@@ -23,174 +128,104 @@
             border: 0;
             background-color: var(--color-primary-500);
             padding: 25px;
-            color: var(--color-neutral-0);
+            color: var(--color-neutral-000);
         }
 
         .landscape__text {
             padding: 20px;
-            color: var(--color-neutral-0);
-            font-size: var(--font-size-h4);
+            color: var(--color-neutral-000);
+            font-weight: 200;
             text-align: center;
         }
     }
 
+    @media (orientation: landscape) and (height < 700px) {
 
-    .hero {
-        position: relative;
-        width: 100%;
-        height: 100dvh;
-        background-image: url(../../img/foto-pettine-IfjHaIoAoqE-unsplash.jpg);
-        background-position: center bottom;
-        background-size: cover;
-        overflow: hidden;
-        padding-top: 70px;
-    }
-
-    @media (width >=996px) {
-
-        .hero .container {
-            gap: 40px;
-            align-items: center;
-            height: 100%;
-            justify-content: flex-start;
+        .scroll__arrow,
+        .scroll__text {
+            display: none;
         }
     }
 
-    @media (width >=576px) {
+    @media (width > 200px) and (width < 375px) {
+
+        .scroll__arrow,
+        .scroll__text {
+            display: none;
+        }
+    }
+
+    @media (width > 759px) {
+        .header {
+            width: 100%;
+            max-width: 1200px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            top: 0;
+        }
+
+        .header__menu {
+            position: relative;
+            transform: translateX(0);
+            background: transparent;
+
+            ul {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+                font-size: clamp(0.938rem, 0.917rem + 0.09vw, 1rem);
+                font-family: var(--text-paragraf);
+
+                li {
+                    cursor: pointer;
+
+                    a {
+                        padding: 0 40px;
+                    }
+
+                    &:hover {
+                        background: oklch(from var(--color-neutral-000) 50% c h);
+                        transition: 0.2s;
+                        font-size: calc(var(--text-paragraf) + 2px);
+                    }
+                }
+            }
+        }
+
         .hero {
-            padding-top: 0;
+            .container {
+                align-items: center;
+                justify-content: space-between;
+                gap: 0;
+                height: auto;
+            }
         }
-    }
 
-    .hero__title {
-        text-align: center;
-        color: var(--color-primary-500);
-    }
-
-    .hero__subtitle {
-        text-align: center;
-        color: var(--color-primary-400);
-    }
-
-    @media (width > 1024px) {
         .hero__title {
             width: 700px;
+            margin-top: 20%;
         }
 
         .hero__subtitle {
-            width: 500px;
-        }
-    }
-
-    .hero__bottom {
-        background-color: var(--color-neutral-0);
-        --height: 60px;
-        height: var(--height);
-        width: 100%;
-        border-radius: 50% 50% 0 0;
-        position: absolute;
-        bottom: calc(0px - (var(--height) / 2));
-    }
-
-    @media (width >=996px) {
-        .hero__bottom {
-            --height: 250px;
-        }
-    }
-
-    .header {
-        position: relative;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 999;
-    }
-
-    @media (width <=576px) {
-        .header {
-            position: fixed;
-            top: 0;
-        }
-    }
-
-
-    @media (width <=576px) {
-        .header__menu {
-            width: 110%;
-            height: 100vh;
-            left: -15px;
-            top: 0;
-            font-size: var(--font-size-h2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            position: fixed;
-            background-color: var(--color-primary-500);
-            transform: translateX(-100%);
-            transition: .3s;
+            width: 520px;
         }
 
-        .header__menu ul {
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: space-around;
-        }
-
-        .header__menu a {
-            color: var(--color-neutral-0);
-        }
-
-        .header__menu.open {
-            transform: translateX(0%);
-        }
-    }
-
-    @media (width >=576px) {
-        .header__menu {
-            width: 100%;
-            display: flex;
-            gap: 20px;
-        }
-
-        .header__menu ul {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            gap: 30px;
-        }
-
-        .header__menu ul li a {
-            color: var(--color-neutral-0);
-        }
-    }
-
-
-
-    @media (width >=576px) {
         .header__burger {
             display: none;
         }
     }
 
-
-    .scroll__arrow,
-    .scroll__text {
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        font-weight: bold;
-        color: var(--color-primary-500);
-        text-shadow: 
-        1px 1px var(--color-neutral-0),
-        -1px -1px var(--color-neutral-0)
-        ;
-    }
-
-    .scroll__arrow {
-        font-size: var(--font-size-h3);
+    @media (width > 567px) and(width < 750px) {
+        .header__menu {
+            ul {
+                li {
+                    a {
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
     }
 }

@@ -7,6 +7,13 @@
         display: flex;
         flex-direction: column;
     }
+
+    @media (width < 600px){
+        .container{
+            padding: 0 30px;
+        }
+    }
+
     .theme{
         position: fixed;
         right: 10%;
