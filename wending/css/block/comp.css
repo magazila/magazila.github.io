@@ -1,0 +1,24 @@
+@layer comp {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .theme{
+        position: fixed;
+        right: 10%;
+        bottom: 10%;
+        border: 0;
+        border-radius: 25px;
+        padding: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--color-primary-600);
+        background: var(--color-primary-300);
+        cursor: pointer;
+        z-index: 10;
+    }
+}

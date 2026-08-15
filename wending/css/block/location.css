@@ -1,0 +1,88 @@
+@layer comp {
+
+    .location {
+
+        padding: 0 0 clamp(48px, calc(39.273px + 2.727vw), 72px);
+
+        .location__title,
+        .location__subtitle {
+            text-align: center;
+            color: var(--color-primary-500);
+        }
+
+        .location__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 24px;
+            gap: 8px;
+        }
+
+        @media (width < 1023px) and (width > 578px) {
+            .location__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (width >=1024px) {
+            .location__grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .location__card {
+            display: flex;
+            position: relative;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .location__card-last {
+            background-color: var(--color-primary-500);
+        }
+
+        .location__arrow {
+            color: var(--color-neutral-0);
+            font-size: 40px;
+            position: absolute;
+            right: 5%;
+            top: 5%;
+        }
+
+        .location__card--overlay {
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            z-index: 2;
+            background-image: linear-gradient(0deg, #00000080, #ffffff00);
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            pointer-events: none
+        }
+
+        .location__card-name {
+            width: 100%;
+            height: 25%;
+            color: var(--color-neutral-0);
+            position: absolute;
+            z-index: 5;
+            font-weight: 500;
+            z-index: 5;
+            left: 20px;
+            bottom: 0px;
+        }
+
+
+    }
+
+
+
+
+
+}
