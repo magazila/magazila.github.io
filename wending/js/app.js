@@ -19,12 +19,9 @@ for (const link of menuLink) {
 }
 
 landscapeClose.addEventListener('click', function () {
-    if (landscapeClose) {
 
-    }
-    else {
-        landscape.style.display = 'none';
-    }
+    landscape.style.display = 'none';
+
 
 })
 
