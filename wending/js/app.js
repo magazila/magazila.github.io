@@ -18,15 +18,15 @@ for (const link of menuLink) {
     })
 }
 
-// landscapeClose.addEventListener('click', function () {
-//     if (landscapeClose) {
+landscapeClose.addEventListener('click', function () {
+    if (landscapeClose) {
 
-//     }
-//     else {
-//         landscape.style.display = 'none';
-//     }
+    }
+    else {
+        landscape.style.display = 'none';
+    }
 
-// })
+})
 
 theme.addEventListener('click', function () {
     body.classList.toggle('dark')
