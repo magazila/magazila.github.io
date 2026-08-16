@@ -1,61 +1,76 @@
-const burger = document.querySelector('.header__burger')
-const menu = document.querySelector('.header__menu')
-const menuLink = document.querySelectorAll('.header__link')
-const landscape = document.querySelector('.landscape')
-const landscapeClose = document.querySelector('.landscape__close')
-const scrollArrfow = document.querySelector('.scroll__arrow')
-const body = document.querySelector('body')
-const theme = document.querySelector('.theme')
+let cardWidth = document.querySelector('.featured__card').clientWidth
+let countCard = document.querySelectorAll('.featured__card').length
 
+let nowNumberCard = 0
+let step = cardWidth + 20
+let maxPosCard = step * (countCard - 1)
+let containerCard = document.querySelector('.featured__card-wrapper')
+let scrollLeft = 0
 
+const btbl = document.querySelector('.featured__card-right')
+const btbR = document.querySelector('.featured__card-left')
 
+window.addEventListener('resize', function () {
+    cardWidth = document.querySelector('.featured__card').clientWidth
+    step = cardWidth + 20
+    maxPosCard = step * (countCard - 1)
+    scrollLeft = nowNumberCard * step
+    containerCard.style.transform = `translateX(-${scrollLeft}px)`
 
-burger.addEventListener('click', function () {
-    menu.classList.toggle('open')
+    console.log('максимум ширина контейнера', maxPosCard)
+    console.log('ширина карточки', cardWidth)
+    console.log('длина шага', step)
+    console.log('номер карточки', nowNumberCard + 1)
+    console.log('позиция для смещения', scrollLeft)
 })
-for (const link of menuLink) {
-    link.addEventListener('click', function () {
-        menu.classList.remove('open')
-    })
+
+function checkleft() {
+    if (nowNumberCard === countCard - 1) {
+        btbR.style.display = 'none'
+    }
+    else {
+        btbR.style.display = 'flex'
+    }
 }
 
-landscapeClose.addEventListener('click', function () {
-    landscape.style.display = 'none';
+function checkRigth() {
+    if (nowNumberCard === 0) {
+        btbl.style.display = 'none'
+    }
+    else {
+        btbl.style.display = 'flex'
+    }
+}
+
+console.log('максимум ширина контейнера', maxPosCard)
+console.log('ширина карточки', cardWidth)
+console.log('длина шага', step)
+console.log('номер карточки', nowNumberCard + 1)
+console.log('позиция для смещения', scrollLeft)
+
+
+btbR.addEventListener('click', function () {
+    if (nowNumberCard < countCard - 1) {
+        nowNumberCard += 1
+        scrollLeft = nowNumberCard * step
+        containerCard.style.transform = `translateX(-${scrollLeft}px)`
+        console.log(nowNumberCard + 1)
+        checkleft()
+        checkRigth()
+    }
 })
-    // theme.addEventListener('click', function () {
-    //     body.classList.toggle('dark')
-    // })
 
 
-const massFeaturedCard = document.querySelectorAll('.featured__card')
-const countCard = massFeaturedCard.length
-let cardWidht = document.querySelector('.featured__card').clientWidth
-let positionCard = 0
-const step = cardWidht + 20
-const leftArrow = document.querySelectorAll('.featured__card-left-arrow')
-const rightArrow = document.querySelectorAll('.featured__card-right-arrow')
-const containerCard = document.querySelector('.featured__card-wrapper')
+btbl.addEventListener('click', function () {
+    if (nowNumberCard > 0) {
+        nowNumberCard -= 1
+        scrollLeft = nowNumberCard * step
+        containerCard.style.transform = `translateX(-${scrollLeft}px)`
+        console.log(nowNumberCard + 1)
+        checkleft()
+        checkRigth()
+    }
+})
 
-
-
-
-
-for (let right of rightArrow) {
-    right.addEventListener('click', function(){
-        positionCard = positionCard - step
-        containerCard.style.transform = `translateX(${positionCard}px)`
-    })
-}
-for (let left of leftArrow) {
-    left.addEventListener('click', function(){
-        positionCard = positionCard + step
-        containerCard.style.transform = `translateX(${positionCard}px)`
-    })
-}
-
-
-console.log(countCard)
-console.log(cardWidht)
-console.log(step)
-
-
+checkleft()
+checkRigth()

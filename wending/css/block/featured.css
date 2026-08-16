@@ -2,12 +2,12 @@
 
     .featured {
         --border-rad: 8px;
+        position: relative;
 
         .container {
             overflow: hidden;
         }
 
-        padding-bottom: 70px;
 
         .featured__card-wrapper {
             width: 100%;
@@ -22,21 +22,8 @@
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            padding-bottom: 40px;
         }
-
-        .featured__card:first-child {
-            .featured__pag {
-                justify-content: flex-end;
-            }
-        }
-
-        .featured__card:last-child {
-            .featured__pag {
-                justify-content: flex-start;
-            }
-        }
-
 
         .featured__img {
             padding: 0;
@@ -87,23 +74,41 @@
             justify-content: space-around;
             gap: 20px;
             padding-bottom: 20px;
-            transform: translateX(0px);
+            transform: translateX(-0px);
             transition: .3s;
         }
 
-        .featured__card-left-arrow,
-        .featured__card-right-arrow {
-            margin: 0;
+        .featured__card-left,
+        .featured__card-right {
+            position: absolute;
+            height: 100%;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .3s;
+            opacity: 0.3;
+            color: var(--color-primary-600);
+            &:hover{
+                background-color: #ffffff20;
+                 transition: .3s;
+                 opacity: 1;
+            }    
 
-            i {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 25px;
+        }
 
-            }
+        .featured__card-left {
+            right: 0px;
+        }
+        .featured__card-right{
+            left: 0px;
         }
     }
+
+
+
+
 
     @media (orientation: landscape) and (height < 800px) {
         .featured__img {
