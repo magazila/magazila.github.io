@@ -6,24 +6,24 @@ let step = cardWidth + 20
 let maxPosCard = step * (countCard - 1)
 let containerCard = document.querySelector('.featured__card-wrapper')
 let scrollLeft = 0
-
 const btbl = document.querySelector('.featured__card-right')
 const btbR = document.querySelector('.featured__card-left')
-
 window.addEventListener('resize', function () {
     cardWidth = document.querySelector('.featured__card').clientWidth
     step = cardWidth + 20
     maxPosCard = step * (countCard - 1)
     scrollLeft = nowNumberCard * step
     containerCard.style.transform = `translateX(-${scrollLeft}px)`
-
-    console.log('максимум ширина контейнера', maxPosCard)
-    console.log('ширина карточки', cardWidth)
-    console.log('длина шага', step)
-    console.log('номер карточки', nowNumberCard + 1)
-    console.log('позиция для смещения', scrollLeft)
 })
-
+window.addEventListener('scroll', function () {
+    let scrollY = window.scrollY
+    if (scrollY > 300) {
+        document.querySelector('.header').style.background = 'var(--color-primary-400)'
+    }
+    else {
+        document.querySelector('.header').style.background = ''
+    }
+})
 function checkleft() {
     if (nowNumberCard === countCard - 1) {
         btbR.style.display = 'none'
@@ -32,7 +32,6 @@ function checkleft() {
         btbR.style.display = 'flex'
     }
 }
-
 function checkRigth() {
     if (nowNumberCard === 0) {
         btbl.style.display = 'none'
@@ -41,14 +40,6 @@ function checkRigth() {
         btbl.style.display = 'flex'
     }
 }
-
-console.log('максимум ширина контейнера', maxPosCard)
-console.log('ширина карточки', cardWidth)
-console.log('длина шага', step)
-console.log('номер карточки', nowNumberCard + 1)
-console.log('позиция для смещения', scrollLeft)
-
-
 btbR.addEventListener('click', function () {
     if (nowNumberCard < countCard - 1) {
         nowNumberCard += 1
@@ -59,8 +50,6 @@ btbR.addEventListener('click', function () {
         checkRigth()
     }
 })
-
-
 btbl.addEventListener('click', function () {
     if (nowNumberCard > 0) {
         nowNumberCard -= 1
@@ -71,6 +60,5 @@ btbl.addEventListener('click', function () {
         checkRigth()
     }
 })
-
 checkleft()
 checkRigth()
