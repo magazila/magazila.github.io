@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider/css/style.css">
+
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: var(--gradient-subtle);
+        }
+
+        .container {
+
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .work__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .work__card {
+            overflow: hidden;
+            padding: 0;
+            background: var(--color-bg);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+
+            &:hover {
+                box-shadow: var(--shadow-md);
+
+                figure {
+                    img {
+                        transform: scale(1.15) rotate(5deg);
+                        transition: .2s;
+                    }
+                }
+            }
+
+
+        }
+
+        .card__body {
+            padding: 25px;
+        }
+
+        figure {
+            img {
+                border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+                width: 100%;
+                aspect-ratio: 16/9;
+                transform: scale(1.01);
+                 transition: .2s;
+            }
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .card__stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-transform: capitalize;
+
+        }
+
+        .html,
+        .css,
+        .Js {
+            padding: 5px 25px;
+            border-radius: var(--radius-full);
+        }
+
+        .html {
+            background-image: linear-gradient(90deg, #e77f67, #e15f41);
+            color: var(--color-bg);
+        }
+
+        .css {
+            background-image: linear-gradient(90deg, #778beb, #546de5);
+            color: var(--color-bg);
+        }
+
+        .Js {
+            background-image: linear-gradient(90deg, #f7d794, #f5cd79);
+            color: var(--color-text-primary);
+        }
+    </style>
+
+    <title>magazila - личный сайт</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Magazila личный сайт портфолию </h1>
+
+        <div class="work__grid">
+            <a href="slider/">
+                <article class="work__card card">
+                    <figure class="card__img">
+                        <img src="img/slider.png" alt="">
+                    </figure>
+                    <div class="card__body">
+                        <h2 class="card__title">Слайдер</h2>
+                        <p class="card__subtitle">Небольшой и весьма простой бесконечный слайдер. Подстраиваеться под
+                            ширину браузера, а так же под разное кол-во фотографий внутри</p>
+                        <div class="card__stack">
+                            <p class="html">html</p>
+                            <p class="css">css</p>
+                            <p class="Js">JavaScript</p>
+                        </div>
+
+                    </div>
+                </article>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
