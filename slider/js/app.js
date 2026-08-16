@@ -51,3 +51,41 @@ leftBtn.addEventListener("click", function () {
   }
   console.log(indexCard);
 });
+
+const pagination = document.querySelector(".slider__pagination");
+pagination.innerHTML = "";
+
+let i = 0;
+
+for (let slide of slideMass) {
+  const dot = document.createElement("div");
+  dot.classList.add("slider__circle");
+  dot.dataset.index = i;
+  pagination.appendChild(dot);
+  i++;
+}
+const allDots = document.querySelectorAll(".slider__circle");
+allDots[0].classList.add("active");
+
+function updateActiveDot(index) {
+  const dots = document.querySelectorAll(".slider__circle");
+  for (let dot of dots) {
+    dot.classList.remove("active");
+  }
+  dots[index].classList.add("active");
+}
+function goToSlide(index) {
+  let offset = -index * step;
+  containerSlider.style.transform = `translateX(${offset}px)`;
+  startPos = offset;
+  indexCard = index;
+  updateActiveDot(index);
+}
+pagination.addEventListener("click", function (event) {
+  const dot = event.target.closest(".slider__circle");
+
+  if (dot) {
+    const index = Number(dot.dataset.index);
+    goToSlide(index);
+  }
+});
