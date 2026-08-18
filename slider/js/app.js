@@ -89,3 +89,4 @@ pagination.addEventListener("click", function (event) {
     goToSlide(index);
   }
 });
+
