@@ -6,7 +6,7 @@ let maxNum = prompt("Укажи второе число");
 minNum = Number(minNum);
 maxNum = Number(maxNum);
 
-if (!isNaN(minNum) && !isNaN(maxNum)) {
+if (!isNaN(minNum) && !isNaN(maxNum) && minNum < maxNum) {
   let number = Math.floor(Math.random() * (maxNum - minNum + 1) + minNum);
   alert(`Отлично, я загадал число от ${minNum} До ${maxNum}`);
 
@@ -17,9 +17,19 @@ if (!isNaN(minNum) && !isNaN(maxNum)) {
   let score = 0;
   while (true) {
     let userNumber = prompt("Введи число");
+
     if (userNumber === null) {
       break;
     }
+
+    if ((userNumber > maxNum) || (userNumber < minNum) || (userNumber.trim() === '')) {
+      alert(
+        "Введенное число вышло за допустмый диапазон! Введи допустимые значения",
+      );
+      continue;
+    }
+
+
     if (isNaN(userNumber)) {
       alert("Введи число!");
       continue;
