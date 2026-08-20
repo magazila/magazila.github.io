@@ -72,7 +72,8 @@
         >Введите конечное число число <input type="text" name="" id="maxNum"
       /></label>
       <label for=""
-        >Введите первое число для деления <input type="text" name="" id="diapMin"
+        >Введите первое число для деления
+        <input type="text" name="" id="diapMin"
       /></label>
       <label for=""
         >Введите второе число для деления
@@ -80,22 +81,30 @@
       /></label>
       <button class="getResult" type="button">Расчитатать</button>
     </div>
-    <div class="first__res"></div>
-    <div class="second__res"></div>
-    <div class="other__res"></div>
+    <div class="first__res">
+      <p>Делиться сразу на оба делителя</p>
+      <div class="first__res-container"></div>
+    </div>
+    <div class="second__res">
+      <p>Делиться на первый делитель</p>
+      <div class="second__res-container"></div>
+    </div>
+    <div class="other__res">
+      <p>Делиться на второй делитель</p>
+      <div class="other__res-container"></div>
+    </div>
 
     <script>
-      const first = document.querySelector(".first__res");
-      const second = document.querySelector(".second__res");
-      const other = document.querySelector(".other__res");
+      const first = document.querySelector(".first__res-container");
+      const second = document.querySelector(".second__res-container");
+      const other = document.querySelector(".other__res-container");
 
       const btn = document
         .querySelector(".getResult")
         .addEventListener("click", function () {
-
-          first.innerHTML = ''  
-          second.innerHTML = ''
-          other.innerHTML = ''
+          first.innerHTML = "";
+          second.innerHTML = "";
+          other.innerHTML = "";
 
           let firstNum = document.querySelector("#minNum").value;
           let secondNum = document.querySelector("#maxNum").value;
