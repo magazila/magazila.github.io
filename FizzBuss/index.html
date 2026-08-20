@@ -116,6 +116,10 @@
           firstDiapMin = Number(firstDiapMin);
           secondDiapMax = Number(secondDiapMax);
 
+          if (firstDiapMin == 0 || secondDiapMax == 0){
+            alert('Делить на 0 нельзя!')
+          }
+
           let firstCheck =
             !isNaN(firstNum) &&
             !isNaN(secondNum) &&
