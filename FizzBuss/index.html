@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #a2a2a220;
+        font-family: "Montserrat", sans-serif;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        height: 100vh;
+    }
+
+    .task {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .task label {
+        display: flex;
+        gap: 20px;
+        min-width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    input {
+        border: 0;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    button {
+        border: 0;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 25px;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .first__res,
+    .second__res,
+    .other__res {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+</style>
+
+<body>
+    <div class="task">
+        <label for="">Введите начально число <input type="text" name="" id="minNum" /></label>
+        <label for="">Введите конечное число число <input type="text" name="" id="maxNum" /></label>
+        <label for="">Введите первое число диапозона <input type="text" name="" id="diapMin" /></label>
+        <label for="">Введите последнее число диапозона
+            <input type="text" name="" id="diapMax" /></label>
+        <button class="getResult" type="button">Расчитатать</button>
+    </div>
+    <div class="first__res"></div>
+    <div class="second__res"></div>
+    <div class="other__res"></div>
+
+    <script>
+        const first = document.querySelector(".first__res");
+        const second = document.querySelector(".second__res");
+        const other = document.querySelector(".other__res");
+
+        const btn = document
+            .querySelector(".getResult")
+            .addEventListener("click", function () {
+                let firstNum = document.querySelector("#minNum").value;
+                let secondNum = document.querySelector("#maxNum").value;
+                let firstDiapMin = document.querySelector("#diapMin").value;
+                let secondDiapMax = document.querySelector("#diapMax").value;
+
+                firstNum = Number(firstNum);
+                secondNum = Number(secondNum);
+                firstDiapMin = Number(firstDiapMin);
+                secondDiapMax = Number(secondDiapMax);
+
+                let firstCheck =
+                    !isNaN(firstNum) &&
+                    !isNaN(secondNum) &&
+                    !isNaN(firstDiapMin) &&
+                    !isNaN(secondDiapMax);
+                let secondCheck =
+                    firstNum < secondNum && firstDiapMin < secondDiapMax;
+
+                if (firstCheck == true && secondCheck == true) {
+                    for (let start = firstNum; start < secondNum + 1; start++) {
+                        if (start % firstDiapMin == 0 && start % secondDiapMax == 0) {
+                            let result1 = `<p>${start}</p>`;
+                            first.insertAdjacentHTML("beforeend", result1);
+                        } else if (start % firstDiapMin == 0) {
+                            let result2 = `<p>${start}</p>`;
+                            second.insertAdjacentHTML("beforeend", result2);
+                        } else if (start % secondDiapMax == 0) {
+                            let result3 = `<p>${start}</p>`;
+                            other.insertAdjacentHTML("beforeend", result3);
+                        }
+                    }
+                } else if (firstCheck != true) {
+                    alert("Вы ввели ни числа, пожалуста повторите попытку ");
+                } else if (secondCheck != true) {
+                    alert("Минимальное число не может быть больше максимального");
+                }
+
+                firstNum = "";
+                secondNum = "";
+                firstDiapMin = "";
+                secondDiapMax = "";
+
+            });
+    </script>
+</body>
+
+</html>
