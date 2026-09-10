@@ -64,9 +64,7 @@ let oneCard = cardMass.map((card) => {
   cardGrid.insertAdjacentHTML("beforeend", el);
 });
 
-let cartArray = [
-  { id: 49, name: "Внешний DVD привод", price: 3490, image: "💿" },
-  { id: 50, name: "Кабель HDMI", price: 1290, image: "🔌" }]
+let cartArray = []
 
 cardGrid.addEventListener('click', function (card) {
   if (card.target.classList.contains("add-to-cart")) {
