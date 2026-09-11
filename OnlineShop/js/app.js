@@ -91,14 +91,17 @@ function updateCart() {
   }
   else {
     cartContainer.innerHTML = ''
+    let count = 1
     for (let oneProd of cartArray) {
-      let el = `                <div class="one-producte-cart">
+
+      let el = `                <div class="one-producte-cart" data-id="${count}">
                     <figure class="product-images">${oneProd.image}</figure>
                     <p class="product-name">${oneProd.name}</p>
                     <p class="product-price">${oneProd.price}</p>
                 </div>`
       cartContainer.insertAdjacentHTML("beforeend", el)
       updateSumCart(Number(`${oneProd.price}`))
+      count++
     }
   }
 }
@@ -117,13 +120,20 @@ function updateSumCart() {
   cartItems.insertAdjacentHTML("beforeend", el)
 }
 
-let prodCart = document.querySelectorAll('.one-producte-cart')
+
+function removeFromCart(e) {
+  const cartItem = e.target.closest('.one-producte-cart');
+  if (!cartItem) return;
+
+  const index = Number(cartItem.dataset.id) - 1;
+  if (index < 0 || index >= cartArray.length) return;
+  cartArray.splice(index, 1);
 
 
+  cartContainer.innerHTML = ''; 
+  updateCart();
+  updateSumCart();
+}
 
-
-
-
-
-
+cartContainer.addEventListener('click', removeFromCart);
 

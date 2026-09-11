@@ -111,6 +111,7 @@ body {
     list-style: none;
     margin-bottom: 1rem;
     overflow-y: auto;
+    max-height: 67vh;
 }
 
 .cart-items li {
