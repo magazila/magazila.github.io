@@ -43,7 +43,7 @@ body {
 
 }
 
-.modalOpen {
+.modal__openned {
     display: flex;
 }
 
@@ -64,16 +64,19 @@ body {
     padding: 20px;
     align-items: center;
 }
-.title__text{
+
+.title__text {
     margin-left: 20px;
     font-size: clamp(1.50rem, calc(1.273rem + 1.136vw), 2.13rem);
 }
-.modal__close{
+
+.modal__close {
     padding: 10px;
     font-size: 40px;
     cursor: pointer;
 }
-.modal__text{
+
+.modal__text {
     margin: 25px;
     line-height: 30px;
 }
