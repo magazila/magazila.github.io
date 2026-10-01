@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Shafarik&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --container-whith: 800px
+}
+
+body {
+    background-image:
+        url(), linear-gradient(180deg,
+            rgba(24, 220, 255, 1),
+            rgba(23, 192, 235, 1));
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.h1 {
+    font-family: "Shafarik", system-ui;
+    color: rgba(61, 61, 61, 1.0);
+    margin-top: 30px;
+    text-align: center;
+    font-size: 3em;
+}
+
+.addTask {
+    max-width: var(--container-whith);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-end;
+
+}
+
+.textTask,
+.deskTask {
+    width: 100%;
+    border-radius: 15px;
+    border: 0px;
+    padding: 15px;
+    font-family: "Shafarik", system-ui;
+    font-size: 1.2em;
+
+}
+
+.deskTask {
+    min-height: 20dvh;
+}
+
+.textTask:focus,
+.deskTask:focus {
+    outline: 0px;
+    background-color: rgba(126, 255, 245, 1.0);
+    box-shadow: 0 0 2px 2px rgba(255, 250, 101, 0.3);
+}
+
+.btnTask {
+    cursor: pointer;
+    width: max-content;
+    background-color: rgba(125, 95, 255, 1.0);
+    box-shadow: 0 0 2px 2px rgba(255, 250, 101, 0.3);
+    padding: 10px 40px;
+    font-family: "Shafarik", system-ui;
+    border-radius: 15px;
+    border: 0;
+    font-size: 1.2em;
+}
+
+.btnTask:active {
+    background: rgba(255, 56, 56, 1.0);
+}
+
+.taskList {
+    max-width: var(--container-whith);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 15px;
+    gap: 10px;
+    height: 60px;
+    padding: 10px 20px;
+    overflow: hidden;
+    :hover{
+        .taslDel{
+            display: block;
+        }
+    }
+
+}
+
+.task.open {
+    height: auto;
+    transition: heigth 0.5s
+}
+
+.taskTop {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    font-size: 2em;
+}
+
+.taslDel{
+    display: none;
+}
+
+.taskCenter {
+    font-size: 1.2em;
+}
+.taskNone{
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-align: center;
+}
