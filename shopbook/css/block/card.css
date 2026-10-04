@@ -1,0 +1,127 @@
+.book__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  padding: var(--space-24) 0;
+}
+
+.card__book {
+  background: var( --c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow:var(--c-shadow);
+    transform: translateY(-2px);
+    transition: var(--transition-fast);
+
+    .favorite {
+      opacity: 1;
+      transition: var(--transition-fast);
+    }
+  }
+}
+
+.card__cover {
+  position: relative;
+
+  img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    width: 90%;
+    margin: 10px 5% 0 5%;
+    border-radius: 8px;
+  }
+}
+
+.card__body {
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card__title {
+  font-size: var(--f-size-body);
+  font-weight: var(--f-weight-semibold);
+  color: var(--c-tex);
+}
+
+.card__author {
+  font-size: var(--f-size-small);
+  color: var(--c-text-mute);
+}
+
+.card__genre {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: var(--c-badge-bg);
+  color: var(--c-badge-text);
+  border-radius: var( --radius-small)
+}
+
+.card__rating {
+  color: var(--c-star);
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--c-badge-bg);
+  border-radius:var(--radius-small);
+}
+
+.card__prise {
+  font-size: var(--f-size-h3);
+  font-weight: var(--f-weight-bold);
+  color: var(--c-text);
+}
+
+.card__desc {
+  max-height: 90px;
+  overflow: hidden;
+}
+
+.favorite {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(189, 195, 199, 0.5);
+  padding: var(--space-4);
+  opacity: 0.2;
+  transition: var(--transition-fast);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-medium);
+}
+.favorite.check {
+  opacity: 1;
+
+  svg {
+    fill: var(--c-error);
+    stroke-width: 0;
+  }
+}
+.card__inStoke {
+  width: max-content;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-large);
+}
+.card__inStoke--true {
+    background: var(--c-success);
+}
+.card__inStoke--false {
+    background: var(--c-error);
+}

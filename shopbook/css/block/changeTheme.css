@@ -1,0 +1,41 @@
+.change__theme {
+  width: max-content;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: var(--space-8);
+  background-color: var(--c-bg); /* фон подложки переключателя */
+  padding: var(--space-4);
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--c-border);
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-small);
+  color: var(--c-text-muted); /* цвет иконки по умолчанию */
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Эффект при наведении */
+.theme-btn:hover {
+  color: var(--c-text);
+  background-color: var(--c-border);
+}
+
+/* Стилизация активной кнопки темы */
+body.light .theme-btn.light,
+body.dark .theme-btn.dark {
+  color: var(--c-accent); /* подсвечиваем активную иконку оранжевым */
+  background-color: var(--c-surface);
+  box-shadow: 0 2px 4px var(--c-shadow);
+}
