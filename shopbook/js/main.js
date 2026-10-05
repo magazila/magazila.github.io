@@ -1,10 +1,7 @@
-import { rendreCard } from './rendercard.js'
-import { initFav } from './favorites.js'
 import { changeTheme } from './changeTheme.js';
+import { filterCard } from './rendercard.js';
 
 
-
-rendreCard();
-initFav()
 changeTheme()
+filterCard()
 
