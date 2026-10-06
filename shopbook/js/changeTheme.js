@@ -1,7 +1,7 @@
 const body = document.body;
 
 const lightBtn = document.querySelector('[data-id="light"]');
-const darkBtn  = document.querySelector('[data-id="dark"]');
+const darkBtn = document.querySelector('[data-id="dark"]');
 
 export function changeTheme() {
   lightBtn?.addEventListener("click", () => {
