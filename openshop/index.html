@@ -1,47 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Online Book Shop</title>
-</head>
-<body>
-
-
-<header class="header">
-    <div class="container container__header">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container container__header">
         <div class="header__logo">Переплет</div>
-        <div class="header__search"><input type="text" name="search" id="search" placeholder="Поиск по авторы или книге"></div>
-        <div class="header__other">
-            <figure class="favorite">❤
-                <div class="count"></div>
-            </figure>
-            <figure class="wallet">🛒
-                <div class="count"></div>
-                    
-            </figure>
+        <div class="header__search">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Поиск по авторы или книге"
+          />
         </div>
-    </div>
-</header>
+        <div class="header__other">
+          <figure class="favorite">
+            ❤
+            <div class="count"></div>
+          </figure>
+          <figure class="wallet">
+            🛒
+            <div class="count"></div>
+          </figure>
+        </div>
+      </div>
+    </header>
 
+    <div class="banner"></div>
+    <div class="container container__main">
+      <div class="left__col">
+        <div class="filter">
+          <h2 class="sidebar__name">Жанры</h2>
+          <div class="ganre__list"></div>
+          <p class="genre__open">Показать все</p>
+          <p class="genre__close">Свернуть</p>
+        </div>
+        <div class="filter">
+          <h2 class="sidebar__name">Возраст</h2>
+          <div class="age__list"></div>
+        </div>
+        <div class="filter">
+          <h2 class="sidebar__name">Цена</h2>
+          <div class="price__list">
+            <input type="number" name="" id="minPrice" />
+            <input type="number" name="" id="maxPrice" />
+          </div>
 
-<div class="banner"></div>
-<div class="container container__main">
-    <div class="left__col">
-        <h2 class="sidebar__name"> Жанры</h2>
-        <div class="ganre__list"></div>
-        <p class="genre__open">показать все</p>
-        
-    </div>
-    <div class="right__col">
+          <button class="sendFilter" type="button">Поиск</button>
+        </div>
+      </div>
+      <div class="right__col">
         <div class="book__nav"></div>
         <div class="book__grid"></div>
+      </div>
     </div>
-</div>
 
-
-<script type="module" src="js/app.js"></script>
-
-</body>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>

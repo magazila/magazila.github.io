@@ -83,6 +83,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+  padding-bottom: 50px;
 }
 
 .ganre__list {
@@ -98,25 +99,58 @@ header {
   }
 }
 
-.ganre__list.open{
-    height: auto;
+.ganre__list.open {
+  height: auto;
 }
-.genre__open{
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-    font-size: 16px;
-    text-align: center;
-    color: blue;
-    cursor: pointer;
+.genre__open,
+.genre__close {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  color: blue;
+  cursor: pointer;
+}
+.genre__close {
+  display: none;
 }
 
 .card__img {
+  position: relative;
   img {
     width: 100%;
     aspect-ratio: 4/6;
     object-fit: cover;
     border-radius: 10px;
   }
+}
+.age{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 2px;
+    width: 35px;
+    height: 35px;
+}
+.age--red{
+    background-color: red;
+}
+.age--yellow{
+    background-color: yellow;
+}
+.age--green{
+    background-color: green;
+}
+.age--white{
+    background-color: white;
+}
+
+.left__col{
+  padding-bottom: 50px;
 }
