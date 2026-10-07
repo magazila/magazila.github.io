@@ -1,11 +1,11 @@
 .sidebar {
   padding-top: var(--space-24);
   font-size: var(--f-size-h2);
+    position: sticky;
   top: 50px;
 }
 .select__genre,
-.select__price,
-.filter__autor {
+.select__price {
   margin-top: 15px;
   font-size: var(--f-size-h3);
 }
@@ -46,17 +46,6 @@
         color: var(--c-surface);
       }
     }
-  }
-}
-
-.filter__autor {
-  label {
-    display: flex;
-    font-size: var(--f-size-h3);
-    gap: var(--space-8);
-    cursor: pointer;
-    padding-right: 20px;
-    margin: 5px 0;
   }
 }
 .checkbox__genre {
