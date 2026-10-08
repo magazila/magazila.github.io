@@ -1,0 +1,21 @@
+.banner{
+    height: var(--banner-height);
+    background-color: var(--c-banner-b);
+    margin: 0 auto;
+    width: max-content;
+    padding: var(--space-12) var(--space-8);
+}
+.banner__title{
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--c-primary);
+}
+.banner__subtitle{
+    font-size: var(--fs-h3);
+    color: var(--c-text-muted);
+    max-width: 600px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+

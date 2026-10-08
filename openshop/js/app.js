@@ -1,84 +1,111 @@
 import { books } from "./data.js";
 
-const bookGrid = document.querySelector(".book__grid");
-const allGenre = document.querySelector(".ganre__list");
+function myPrint(param) {
+  console.log(param);
+}
 
-function renderGanre() {
-  const setGenre = [];
+function getAllGenre() {
+  const ganreList = document.querySelector(".ganre__list");
+  const allGenre = [];
+
   books.forEach(function (book) {
-    if (book.genre && !setGenre.includes(book.genre)) {
-      setGenre.push(book.genre);
+    if (!allGenre.includes(book.genre)) {
+      allGenre.push(book.genre);
     }
   });
 
-  setGenre.sort();
+  allGenre.sort();
 
-  setGenre.forEach(function (genre) {
-    let obj = `<label class='label__genre'>
-             <input type="checkbox" class="genre__checkbox" value="${genre}">${genre}
-           </label>`;
-    allGenre.insertAdjacentHTML("beforeend", obj);
-  });
-
-  const btnOpen = document.querySelector(".genre__open");
-  const btClose = document.querySelector(".genre__close");
-
-  btnOpen.addEventListener("click", function () {
-    allGenre.classList.add("open");
-    btnOpen.style.display = "none";
-    btClose.style.display = "block";
-  });
-  btClose.addEventListener("click", function () {
-    allGenre.classList.remove("open");
-    btnOpen.style.display = "block";
-    btClose.style.display = "";
+  allGenre.forEach(function (genre) {
+    let obj = `<label><input type="checkbox" value="${genre}" class="ganre__check"><p class="genre">${genre}</p></label>`;
+    ganreList.insertAdjacentHTML("beforeend", obj);
   });
 }
 
-function renderCard(param = "all", minPrice = "all", maxPrice = "all") {
-  bookGrid.innerHTML = "";
-  const bookFilter = books.filter(function (book) {
-    if (param === "all" || (Array.isArray(param) && param.length === 0)) {
-      return true;
-    }
-    if (Array.isArray(param)) {
-      return param.includes(book.genre);
-    }
-    return book.genre === param;
-  });
-  bookFilter.forEach(function (book) {
-    let card = `
-        <div class='card'>
-          <div class='card__img'><img src='${book.coverThumb}'></div>
-          <p class='card__name'>${book.title}</p>
-          <p class='card__author'>${book.author}</p>
-          <p class='genre'>${book.genre}</p>
-        </div>`;
-    bookGrid.insertAdjacentHTML("beforeend", card);
-  });
-}
+let currentLimit = 15;
+let currentGenre = "all";
 
-function getFilterGenre() {
-  const filterGenre = [];
-  const genreList = document.querySelectorAll(".genre__checkbox");
-  const btn = document.querySelector(".sendFilter");
+function renderCard(limit = 15, genre = "all", maxPrice, minPrice) {
+  const cardGrid = document.querySelector(".card__grid");
+  const showMoreCard = document.querySelector(".showMoreCard");
+  cardGrid.innerHTML = "";
 
-  genreList.forEach(function (genre) {
-    genre.addEventListener("change", function () {
-      const checked = document.querySelectorAll(".genre__checkbox:checked");
-      filterGenre.length = 0;
-      checked.forEach((g) => filterGenre.push(g.value));
+  let filteredBooks = [];
+
+  if (genre === "all") {
+    books.forEach(function (book) {
+      filteredBooks.push(book);
     });
+  } else {
+    books.forEach(function (book) {
+      if (book.genre === genre) {
+        filteredBooks.push(book);
+      }
+    });
+  }
+  let booksToRender = [];
+  filteredBooks.forEach(function (book, index) {
+    if (index < limit) {
+      booksToRender.push(book);
+    }
   });
+  booksToRender.forEach(function (book) {
+    let age = "";
+    if (book.ageRating === "18+") {
+      age = `<p class="baggle baggle__age age-18">${book.ageRating}</p>`;
+    } else if (book.ageRating === "16+") {
+      age = `<p class="baggle baggle__age age-16">${book.ageRating}</p>`;
+    } else if (book.ageRating === "12+") {
+      age = `<p class="baggle baggle__age age-12">${book.ageRating}</p>`;
+    } else if (book.ageRating === "6+") {
+      age = `<p class="baggle baggle__age age-6">${book.ageRating}</p>`;
+    }
 
-  btn.addEventListener("click", function () {
-    renderCard(filterGenre);   
+    let inStock = "";
+    if (book.inStock === true) {
+      inStock = `<button class="add__cart" type="button"><i class="fa-solid fa-cart-shopping"></i>  В корзину </button>`;
+    } else {
+      inStock = `<button class="add__cart" type="button" disabled>  Нет в наличии </button>`;
+    }
+    let cardBook = `
+      <div class="card">
+        <div class="card__img">
+          <img src="${book.coverThumb}" alt="${book.title}" />
+          <p class="baggle baggle__genre">${book.genre}</p>
+          <p class="baggle baggle__rait">
+            <i class="fa-solid fa-ranking-star"></i> ${book.rating}
+          </p>
+          ${age}
+        </div>
+        <div class="card__body">
+          <p class="card__title">${book.title}</p>
+          <p class="card__author">${book.author}</p>
+          <p class="card__price">${book.price} ${book.currency}</p>
+          <div class="card__bottom">
+            <button class="add__fav" type="button"><i class="fa-solid fa-heart"></i></button>
+            ${inStock}
+          </div>
+        </div>
+      </div>`;
+
+    cardGrid.insertAdjacentHTML("beforeend", cardBook);
+  });
+  if (limit < filteredBooks.length) {
+    showMoreCard.innerHTML = "Показать ещё";
+    showMoreCard.style.display = "";
+  } else {
+    showMoreCard.innerHTML = "";
+    showMoreCard.style.display = "none";
+  }
+}
+function initShowMore() {
+  const showMoreCard = document.querySelector(".showMoreCard");
+  showMoreCard.addEventListener("click", function () {
+    currentLimit = currentLimit + 5;             
+    renderCard(currentLimit, currentGenre);       
   });
 }
 
-
-
-renderCard();
-renderGanre();
-
-getFilterGenre();
+getAllGenre();
+renderCard(currentLimit, currentGenre);
+initShowMore();
