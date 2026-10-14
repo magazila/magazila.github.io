@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: rgba(236, 240, 241, 0.6);
+    padding: 20px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 300px) minmax(auto, 1200px));
+    gap: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: start;
+
+    @media (width < 801px) {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+    }
+}
+
+.container aside {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.sidebar {
+    height: 100dvh;
+    position: sticky;
+    top: 0px;
+    padding: 20px;
+}
+
+.card__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.card {
+    transition: 0.2s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        transition: 0.2s ease;
+    }
+}
+
+.card__img {
+    position: relative;
+
+    img {
+        border-radius: 15px;
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+    }
+}
+
+.card__baggle {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.anime__rati {
+    top: 15px;
+    left: 5px;
+}
+
+.card__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 44px;
+}
+
+.anime__type {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.showMoreAnime {
+    position: relative;
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#genre,
+#studios,
+#year {
+    width: 100%;
+    border: 1px dotted rgba(155, 89, 182, 0.2);
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 20dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+
+    label {
+        display: flex;
+        gap: 10px;
+        margin: 5px;
+    }
+
+}
+
+
+.filter__container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#age,
+#season {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+
+    input {
+        width: 100%;
+        border: 0;
+        border-radius: 16px;
+        padding: 20px;
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 10%;
+    z-index: 10000;
+
+    span {
+        width: 50%;
+        height: 2px;
+        background-color: #000;
+    }
+}
+
+
+
+@media (width < 801px) {
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        left: -100%;
+        transition: 0.2s ease;
+
+    }
+    .sidebar.open{
+        left: 0;
+        transition: 0.2s ease;
+    }
+
+    .search {
+        display: flex;
+        max-width: 100%;
+        margin-left: 0px;
+        gap: 20px;
+
+        input {
+            width: 90%;
+        }
+    }
+
+    #genre,
+    #studios,
+    #year,
+    #age,
+    #season {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: visible;
+        max-height: 23dvh;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
