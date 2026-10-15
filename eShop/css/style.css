@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(236, 240, 241, 1.0);
+    padding-bottom: 1rem;
+}
+
+
+#header {
+    background-color: rgba(236, 240, 241, 1.0);
+    display: flex;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 600;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+#search {
+    width: 50%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0;
+    transition: .2s ease-in;
+    margin: 1rem 0;
+}
+
+#search:focus {
+    outline: 0;
+    width: 100%;
+    transition: .2s ease-in;
+}
+
+.card__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.card__img{
+    position: relative;
+    height: 100%;
+    img{
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.brand{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.brand__box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.baddgle__brand{
+        background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+.card__title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 36px;
+}
+
+.card__bottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.old__price{
+    text-decoration: line-through;
+    color: rgba(189, 195, 199,1.0);
+    font-size: 1.2rem;
+}
+.new__price{
+    font-size: 1.5rem;
+    color: rgba(231, 76, 60,1.0);
+}
+
+
+
+.sort__box{
+    color: #000;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    select{
+        width: 50%;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 1rem;
+        border: 0;
+        option{
+            color: #000;;
+        }
+    }
+}
+
